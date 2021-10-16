@@ -1,0 +1,25 @@
+    .tooltip {
+        position: relative;
+    }
+
+    .tooltip-btn {
+        background: black;
+        color: white;
+        border: none;
+        padding: 0.25rem 0.50rem;
+        border-radius: 50%;
+    }
+
+    .tooltip-btn:focus {
+        outline: none;
+    }
+
+    .tooltip-message-container {
+        position: absolute; 
+        right: 0;
+        padding: 0.5rem;
+        background: black;
+        color: white;
+        font-size: 0.75rem;
+        top: 1.5rem;
+    }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      .side-nav ul {
+        list-style: none;
+      }
+
+      .side-nav li {
+        margin: 1rem 0;
+      }
+
+      .side-nav a {
+        text-decoration: none;
+        color: rgb(53, 35, 2);
+      }
+
+      #side-drawer-open-btn {
+        z-index: 1000;
+        background: black;
+        color: white;
+        position: absolute;
+      }
+
+    </style>
+    <script type="module" src="/build/web-components-stencil.esm.js"></script>
+    <script nomodule src="/build/web-components-stencil.js"></script>
+  </head>
+  <body>
+    <button id="side-drawer-open-btn">Open Side Drawer</button>
+    <br/><br/>
+    <uc-side-drawer title="Main Menu">
+      <nav class="side-nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Score</a></li>
+          <li><a href="/">User</a></li>
+        </ul>
+      </nav>
+    </uc-side-drawer>
+
+    <uc-tooltip message="This is the tooltip message">
+      Let's test this new Tooltip
+    </uc-tooltip>
+
+    <script>
+      const sideDrawerOpenBtn = document.querySelector('#side-drawer-open-btn')
+      const sideDrawer = document.querySelector('uc-side-drawer')
+
+      sideDrawerOpenBtn.addEventListener('click', () => {
+        if (!sideDrawer.opened) {
+          // sideDrawer.open = true
+          sideDrawer.open()
+        }
+      })
+
+      setTimeout(() => {
+        sideDrawer.title = 'It Changed!!!'
+        // sideDrawer.setAttribute('title', 'It changed via setAttribute')
+      }, 3000)
+    </script>
+  </body>
+</html>
